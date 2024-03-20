@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simulador Financeiro</title>
+  <link rel="stylesheet" href="script.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1 class="titulo-cinzel">ARTCARE</h1>
+    <div class="container">
+      <div class="calculadora">
+        <h1 class="texto-cinzel">SIMULADOR FINANCEIRO</h1>
+        <div class="valores">
+          <label>VALOR ANUAL COM RESTAURAÇÕES:</label>
+          <input id="input_ano" placeholder="R$">
+          <p>ANOS DE PROJEÇÃO:</p>
+          <input id="input_projecao" placeholder="0">
+        </div>
+        <div class="button">
+          <button onclick="logica()">
+            <p id="botao">CALCULAR PROJEÇÃO</p>
+          </button>
+          <div id="resultado"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function logica() {
+    var restauraçãoAnual = Number(input_ano.value)
+    var projecaoAno = Number(input_projecao.value)
+    var mediaAno = restauraçãoAnual - (restauraçãoAnual * 0.178)
+    var resultado1 = restauraçãoAnual - mediaAno
+    var mediaAnual = resultado1 / projecaoAno
+
+    resultado.innerHTML = `<p>Com a implementação do nosso sistema, podemos reduzir suas despesas com 
+        manutenção e restauração em até 17%. Isso significa que você economizará 
+        não apenas dinheiro, mas também tempo e preocupações com reparos 
+        desnecessários.<br>
+        Além disso, nossa abordagem proativa visa prevenir problemas antes que eles 
+        ocorram, mantendo suas obras de arte em condições impecáveis por mais tempo.</p>`
+
+    resultado.innerHTML += `<p style=" font-size: 25px;">De acordo com os dados por no você deixará de perder R$${resultado1.toFixed(2)} com restaurações e manuntenções.
+        <br> Em media R$${mediaAnual.toFixed(2)} por mês.</p>`
+  }
+</script>
