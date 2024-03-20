@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet"></head>
+<body>
+    <header>
+        
+        <div class="logo">ARTCARE</div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicial</a></li>
+                <li><a href="#">Calculadora</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Serviços</a></li>
+            </ul>
+        </nav>
+        <div class="login-box">CONTATO</div>
+    </header>
+
+    <div class="titulo-calculadora">Calculadora Financeira</div>
+    <div class="subtitulo-calculadora">Saiba quanto é possivel economizar usando nossa solução.</div>
+
+    <div class="sidebar">
+        <p>Deseja usar o percentual de perdas resultante da nossa pesquisa?</p>
+        <div class="options">
+            <label for="sim">Sim</label>
+            <input type="radio" id="sim" name="resposta" value="sim">
+            <label for="nao">Não</label>
+            <input type="radio" id="nao" name="resposta" value="nao">
+        </div>
+        <div class="titulo">
+        <label for="gastos">Gastos Mensais com Manutenção Geral (R$)</label>
+        <input type="text" id="input_manutencao"  name="gastos">
+    </div>
+    <div class="titulo">
+        <label for="gastos">Gastos Mensais com Restauração de Acervo (R$):</label>
+        <input type="text" id="input_custoMensal" name="gastos">
+    </div>
+    <div class="titulo">
+        <label for="gastos">Anos de Projeção:</label>
+        <input type="text" id="input_anosProjecao"  name="gastos">
+    </div>
+    <button  onclick="calcularImpacto()" class="login-button">CALCULAR</button>
+
+    </div>
+        <div class="search-text">
+            <h2>Funcionamento da calculadora</h2>
+            <p>
+                A pesquisa realizada pelo Instituto Brasileiro de Museus (Ibram) revelou que o gasto anual médio com restauração e acervos nos museus pesquisados foi de R$ 3.094.102,07, representando aproximadamente 17,86% dos gastos totais estruturais e de aquisição, conservação e preservação de patrimônio.<br>
+                <br>
+                <!-- O usuário pode inserir os gastos mensais com manutenção geral e restauração de acervo no formulário da calculadora. Com base nesses dados, a calculadora realiza cálculos para estimar quanto é possível economizar em um determinado período, levando em consideração o percentual médio gasto em restauração de acervo apresentado na pesquisa. Essa estimativa é valiosa para os gestores de museus no planejamento e alocação de recursos para a conservação do patrimônio cultural e histórico. -->
+                </p>
+                <div id="resultado"></div>
+        </div>
+</body>
+</html>
+
+<script>
+    function calcularImpacto() {
+      var custoMensalManutencao = Number(input_manutencao.value);
+      var custoMensalRestauracao = Number(input_custoMensal.value);
+      var anosProjecao = Number(input_anosProjecao.value);
+      var custoMensalManutencao = document.getElementById('sim').checked ? 1443474.98 : Number(input_manutencao.value);
+      var custoMensalRestauracao = document.getElementById('sim').checked ? 257841.83 : Number(input_custoMensal.value);
+
+      var custoTotalManutencao = custoMensalManutencao * 12 * anosProjecao;
+      var custoTotalRestauracao = custoMensalRestauracao * 12 * anosProjecao;
+      var porcentagemRestauracao =
+        (custoTotalRestauracao / custoTotalManutencao) * 100;
+      var economiaFinal = 100 - porcentagemRestauracao;
+      var valorEconomiaTotal = custoTotalManutencao - custoTotalRestauracao;
+      var economiaPorAno = valorEconomiaTotal / anosProjecao;
+
+      
+        resultado.innerHTML = `
+          <p><b>Em um período de ${anosProjecao} ano(s), o gasto total com manutenção geral seria de R$ ${custoTotalManutencao.toFixed(
+          2
+        )}, enquanto o gasto total com restauração de acervo seria de R$ ${custoTotalRestauracao.toFixed(
+          2
+        )}.</p>
+          <p>A restauração de acervo representaria ${porcentagemRestauracao.toFixed(
+            2
+          )}% do valor total de manutenção geral.</p>
+          <p>Com nosso sistema, sua instituição teria uma economia de ${economiaFinal.toFixed(
+            2
+          )}% ao ano, o que equivale a uma economia de R$ ${valorEconomiaTotal.toFixed(
+          2
+        )} no período de ${anosProjecao} anos, ou seja, uma economia de R$ ${economiaPorAno.toFixed(
+          2
+        )} por ano.</b></p>
+        `;
+      
+    }
+  </script>
