@@ -1,0 +1,96 @@
+@font-face {
+    font-family: cinzel;
+    src: local(Cinzel), url('..Sprint1/SimuladorFinanceiro/Cinzel');
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cinzel;
+    background-color: #f2f2f2;
+}
+
+#conteudo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#corpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('fundo monalisa.png');
+    background-size: cover;
+    padding: 20px;
+
+}
+
+#titulo {
+    background-color: #63310e;
+    width: 500px;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 40px;
+    font-family: cinzel;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    border: 2px solid #8B4513;   /* Cor da borda */
+}
+
+#div_tabela {
+    background-color: #b9a48d;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;
+    border: 2px solid #63310e;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.inputs {
+    padding: 7px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    width: 150px;
+
+}
+
+#botao {
+    padding: 10px 20px;
+    background-color: #63310e;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 50px;
+    cursor: pointer; /* Mudar o cursor ao passar o mouse */
+    font-size: 16px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#botao:hover {
+    background-color: #4e3826; /* Muda a cor do botão ao passar o mouse */
+}
+
+#div_textoProjecao { /* Texto dentro do innerHTML */
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-top: 20px;
+    border: 2px solid #63310e;
+
+
+}

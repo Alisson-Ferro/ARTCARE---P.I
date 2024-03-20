@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro ArtGuard</title>
+    <link rel="stylesheet" href="styleSimulador.css">
+
+</head>
+
+<body>
+    <div id="corpo">
+        <div id="titulo">
+            <u>
+                <h1>Simulador de custos ArtGuard</h1>
+            </u>
+        </div>
+        <div id="conteudo">
+            <div id="div_tabela">
+                <b>Custo de manutenção total do museu por mês:</b>
+                <input class="inputs" type="number" id="input_manutencao" placeholder="R$0,00"><br>
+
+                <b>Quantos anos você quer projetar?</b>
+                <input class="inputs" type="number" id="input_projecao" placeholder="0"><br>
+                
+
+
+                <button id="botao" onclick="calcularProjecao()">Calcular Projeção</button>
+
+            </div>
+            <div id="div_textoProjecao">Sua projeção aparecerá aqui!</div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function calcularProjecao() {
+        var custoManutencao = Number(input_manutencao.value)
+        var anos = Number(input_projecao.value)
+        var calcManutencao = custoManutencao * 0.1786
+        var calcManutencaoAnual = calcManutencao * 12
+        var total = calcManutencaoAnual * anos
+
+        div_textoProjecao.innerHTML = `Com nossas pesquisas concluímos que os proprietários gastam 17,86% a mais somente com manutenção e restauração de obras de arte. Com base nessa informação procuramos uma forma de acabar com esse custo.<br>
+        <b><br>Com o nosso sistema você vai deixar de gastar:<br></b><br>
+         <b>R$${calcManutencao}</b> por mês com manutenção e restauração das obras.<br> 
+         Resultando em um total de <b>R$${total}</b> por ano com custos de manutenção e restauração de suas obras de arte em exposição.`
+
+    }
+</script>
