@@ -1,0 +1,142 @@
+body {
+    width: 980px;
+    height: 700px;
+    background-color: #050713;
+    background-image: url(https://i.pinimg.com/564x/2a/49/e7/2a49e7ef26dfcf9c2cd7fff0f4a3b67f.jpg);
+    background-repeat: no-repeat;
+    background-size: 80vh;
+    background-position: right top;
+}
+
+.container {
+  display: flex;
+    width: 2000px;
+    margin: 40px;
+}
+
+.header {
+    position: fixed;
+    height: 54px;
+    width: 250px;
+    background-color: #00000000;
+    color: #fff;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("fonts/cinzel.woff") format("woff"),
+        url("fonts/cinzel.ttf") format("truetype");
+}
+
+.titulo-cinzel {
+    font-family: "Cinzel", serif;
+    font-weight: 10;
+    font-size: 24px;
+}
+
+
+.texto-cinzel.destaque {
+    font-weight: 7;
+}
+
+
+.calculadora {
+    position: absolute;
+    display: block;
+    width: 670px;
+    height: 620px;
+    background-color: #070a2f5a;
+    margin-top: 40px;
+    margin-left: 40px;
+    border: 2px solid #60606079;
+    border-radius: 45px;
+    opacity: 0.8;
+  }
+
+  .texto-cinzel {
+    font-family: "Cinzel", serif;
+    padding-top: 0px;
+    color: #ffffff;
+    font-weight: 1;
+    font-size: 50px;
+    text-align: center;
+}
+
+.valores{
+    width: 300px;
+    display: block;
+    justify-self: start;
+    display: grid;
+    font-family: "Cinzel", serif;
+    padding-top: 2px;
+    color: #ffffff;
+    font-weight: 10;
+    font-size: 22px;
+    text-align: center;
+    margin-left: 25px;
+}
+    
+
+#input_ano, #input_projecao{
+  width: 220px;
+  height: 42px;
+  border-radius: 14px;
+  background-color: #cececec7;
+  color: #000000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+#input_ano{
+  position: absolute;
+  right: 0;
+  margin-right: 130px;
+  top: 128px;
+}
+
+#input_projecao{
+    position: absolute;
+    right: 0;
+    margin-right: 130px;
+    top: 189px;
+}
+
+.button {
+    text-align: center;
+  }
+  
+  .button button {
+    position: static;
+    margin-top: 10px;
+    background-color: #1e223952;
+    color: #fff;
+    padding: 0px 25px;
+    border: 2px solid #767676;
+    border-radius: 25px;
+    width:400px;
+    font-family: "Cinzel", serif;
+    font-size: 19px;
+    cursor: pointer;
+  }
+  
+  .button button:hover {
+    transition-duration: 0.9s;
+    background-color: #080450;
+
+    
+  }
+
+#resultado{
+  display: block;
+  width: 635px;
+  margin-left:10px;
+  font-size: 20px;
+  font-family: "Cinzel", serif;
+  align-items: center;
+  justify-content: center;
+}
