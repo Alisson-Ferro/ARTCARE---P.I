@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  
+  <title>Calculadora fincanceira</title>
+</head>
+<body>
+  <div class="container">
+    <div class="cabecalho">
+      <img src="./assets//images/logo-artcare-mono.svg" alt="Logotipo monocromático da ArtCare">
+
+      <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Calculadora</a></li>
+        <li><a href="#">Sobre nós</a></li>
+      </ul>
+        
+      <ul class="icones">
+        <li><img src="./assets/images/pesquisa-icone.svg" alt="Icone de pesquisa"></li>
+        <li><button class="button-outline">Contato</button></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="introducao">
+        <h1 class="titulo-introducao">Calculadora financeira</h1>
+      </div>
+
+      <div class="content">
+        <div class="left">
+          <div class="form">
+            <label for="metricas">Utilizar nosso percentual de perdas da pesquisa?</label>
+            <div class="campo">
+              <div class="campo-radio">
+                <input type="radio" id="metricas_sim" name="metricas" value="sim" />
+                <label for="sim">Sim</label>
+              </div>
+    
+              <div class="campo-radio">
+                <input type="radio" id="metricas_nao" name="metricas" value="nao" checked />
+                <label for="nao">Não</label>
+              </div>
+            </div>
+            
+            <div class="campo input">
+              <label for="acervo">Gastos total com manutenção geral museu</label>
+              <input type="text" name="acervo" id="total_manutencao" placeholder="R$1000,00">
+            </div>
+            
+            <div class="campo input" id="campo_restauracao">
+              <label for="restauracao">Gastos anual com restauracao (opcional)</label>
+              <input type="text" name="restauracao" id="restauracao" placeholder="17.86%">  
+            </div>
+        
+            <div class="campo campo-select input">
+              <label for="tempo">Saiba o quanto irá economizar no período de</label>
+              <select name="tempo" id="tempo">
+                <option value="umMes">1 mês</option>
+                <option value="seisMeses">6 mêses</option>
+                <option value="umAno">1 ano</option>
+                <option value="tresAnos">3 anos</option>
+                <option value="cincoAnos">5 anos</option>
+              </select>
+            </div>
+        
+            <button class="button-outline" onclick="calc()">Calcular</button>
+            <div id="resultado">
+            </div>
+          </div>
+        </div>
+  
+        <div class="right">
+          <div class="pesquisa">
+            <h2 class="titulo-pesquisa">Funcionamento da calculadora</h2>
+            <p class="texto-pesquisa">A pesquisa realizada pelo Instituto Brasileiro de Museus (Ibram) revelou que o gasto anual médio com restauração e acervos nos museus pesquisados foi de R$ 3.094.102,07, representando aproximadamente 17,86% dos gastos totais estruturais e de aquisição, conservação e preservação de patrimônio.</p>
+          </div>
+        </div>
+      </div>   
+    </div>
+  </body>
+  </div>
+</html>
+
+<script src="./assets/script.js"></script>

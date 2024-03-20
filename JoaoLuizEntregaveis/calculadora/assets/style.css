@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 10px = 1rem */
+  --light-color: #ededed;
+}
+
+body {
+  background-image: url(./images/imagem-background-calculadora.png);
+}
+
+body, a, a:visited, a:active {
+  color: var(--light-color);
+  font-family: Manrope;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.8rem;
+  letter-spacing: 0.50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 4.8rem;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.2rem 0 3.2rem 0;
+  font-size: 2rem
+}
+
+.cabecalho ul {
+  list-style: none;
+  display: flex;
+}
+
+.cabecalho .navbar,
+.cabecalho .icones {
+  display: flex;
+  gap: 4.8rem;
+  align-items: center;
+}
+
+.cabecalho .navbar li a {
+  opacity: .5;
+  transition: .3s;
+}
+
+.cabecalho .navbar li a:hover {
+  opacity: 1;
+}
+
+.cabecalho .icones li {
+  cursor: pointer;
+}
+
+.button-outline {
+  background: none;
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+  opacity: .5;
+  padding: 1rem 1.6rem;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2rem;
+  letter-spacing: 0.50px;
+  transition: 0.3s;
+}
+
+.button-outline:hover {
+  opacity: 1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .introducao {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3.2rem;
+}
+
+.main .introducao .titulo-introducao {
+  font-family: Cinzel;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: normal;
+  letter-spacing: 0.50px;
+}
+
+.main .form {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem;
+  background-color: #363636e6;
+  border-radius: 8px;
+  gap: 2rem;
+  width: 60rem;
+  height: 100%;
+}
+
+.main .form .campo.desativado {
+  display: none;
+}
+
+.main .form .campo {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.main .form .campo label {
+  line-height: 28px;
+}
+
+.main .form .campo .campo-radio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main .form .campo-radio input {
+  appearance: none;
+  background-color: var(--light-color);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+}
+
+.main .form .campo-radio input:checked {
+  background-color: #363636;
+  border: 2px solid var(--light-color);
+}
+
+.main .form .campo.input input,
+.main .form .campo.input select {
+  width: 53rem;
+  background: none;
+  color: var(--light-color);
+  border: 1px solid #ededed80;
+  padding: 1rem 1.6rem;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2rem;
+  letter-spacing: 0.50px;
+  appearance: none;
+}
+
+.main .form .campo.input select {
+  background-image: url(./images/setas-select.svg);
+  background-position: 96% 50%;
+  background-repeat: no-repeat;
+}
+
+.main .form .campo.input select option {
+  background: #363636;
+}
+
+.main .form .campo.input input:focus,
+.main .form .campo.input select:focus {
+  border: 1px solid var(--light-color);
+  outline: none;
+  appearance: none;
+}
+
+.main .form .button-outline {
+  width: 18rem;
+}
+
+.main .content .right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main .content .right .pesquisa {
+  width: 90%;
+  background-color: #363636e6;
+  border-radius: 8px;
+  padding: 3.2rem;
+  height: 268px;
+}
+
+.main .content .right .titulo-pesquisa {
+  font-family: Cinzel;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.main .content .right .texto-pesquisa {
+  width: 100%;
+  text-align: justify;
+  line-height: 28px;
+  opacity: .7;
+}
+
+#resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#resultado p {
+  line-height: 28px;
+}
